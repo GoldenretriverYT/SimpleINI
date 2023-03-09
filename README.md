@@ -21,3 +21,7 @@ data.TryAddGroup("MyGroup"); // Create the group, returns true if it didn't exis
 data.TrySetValue("MyGroup", "Value1", "Hello world!"); // Sets a value, returns false if the group does not exist
 data.ForceSetValue("MyGroup", "Value1", "Hello World!"); // Sets a value and creates the group if required
 ```
+### Saving
+```cs
+var iniDataAsString = data.Stringify();
+```
