@@ -63,18 +63,50 @@ namespace SimpleINI
             return true;
         }
 
+        public bool TryGetValue(string groupName, string valueName, out int value)
+        {
+            value = -1;
+            
+            if (!groups.TryGetValue(groupName, out var group)) {
+                return false;
+            }
+
+            if (!group.TryGetValue(valueName, out var stringValue)) return false;
+            if (!int.TryParse(stringValue, out value)) return false;
+            
+            return true;
+        }
+
+        public bool TryGetValue(string groupName, string valueName, out bool value)
+        {
+            value = false;
+
+            if (!groups.TryGetValue(groupName, out var group)) {
+                return false;
+            }
+
+            if (!group.TryGetValue(valueName, out var stringValue)) return false;
+            if (!bool.TryParse(stringValue, out value)) return false;
+
+            return true;
+        }
+
         public bool TrySetValue(string groupName, string valueName, string value)
         {
             if (!groups.TryGetValue(groupName, out var group)) return false;
             group[valueName] = value;
             return true;
         }
+        
+        public bool TrySetValue(string groupName, string valueName, object value) => TrySetValue(groupName, valueName, value.ToString());
 
         public void ForceSetValue(string groupName, string valueName, string value)
         {
             if (!groups.ContainsKey(groupName)) groups.Add(groupName, new());
             groups[groupName][valueName] = value;
         }
+
+        public void ForceSetValue(string groupName, string valueName, object value) => ForceSetValue(groupName, valueName, value.ToString());
 
         public string Stringify()
         {
