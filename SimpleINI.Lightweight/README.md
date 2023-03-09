@@ -1,0 +1,2 @@
+﻿# SimpleINI.Lightweight
+This is the simplest version I made to see in how few lines I can make one. Note that I do not plan on maintaining this version, so if you find any bugs, please use the normal one.
