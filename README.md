@@ -4,6 +4,7 @@ SimpleINI is, as the name suggests, a simple INI file parser. It is designed to 
 ## Features
 * Easy-to-use API
 * Supports comments
+* Built-in int, strings and boolean operations
 
 ## Usage
 ### Parsing
