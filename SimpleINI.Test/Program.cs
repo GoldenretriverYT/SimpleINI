@@ -7,6 +7,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        EmptyDoesNotCrashTest();
         NoGroupTest();
         GroupTest();
         MultiGroupTest();
@@ -15,7 +16,15 @@ internal class Program
         CreateMultiGroupTest();
         Console.WriteLine("All tests passed!");
     }
-    
+
+    private static void EmptyDoesNotCrashTest() {
+        string iniData = @"";
+
+        var data = INIParser.Parse(iniData);
+
+        Console.WriteLine("EmptyDoesNotCrashTest: passed");
+    }
+
     private static void NoGroupTest()
     {
         string iniData = @"val1=yes
