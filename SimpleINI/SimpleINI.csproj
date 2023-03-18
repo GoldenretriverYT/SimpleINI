@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>GoldenretriverYT.$(AssemblyName)</PackageId>
+    <Title>SimpleINI</Title>
+    <Authors>GoldenretriverYT &amp; contributors</Authors>
+    <Description>A simple and lightweight INI parser with support for int, string and bools</Description>
+    <RepositoryUrl>https://github.com/GoldenretriverYT/SimpleINI/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
